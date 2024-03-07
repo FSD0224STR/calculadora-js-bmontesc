@@ -1,0 +1,20 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#screen {
+  font-family: monospace;
+  text-align: right;
+  grid-column: span 5;
+}
+
+.plus {
+  grid-row: span 2;
+}
+
+#calculator {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+}
