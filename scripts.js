@@ -1,19 +1,19 @@
 const buttons = [
-    { label: '+/-', type: 'operation' },    //Cambia de signo
-    { label: 'MRC', type: 'operation' },    //Borra la memoria
-    { label: 'M-', type: 'operation' },
-    { label: 'M+', type: 'operation' },
-    { label: '·/·', type: 'operation' },
+    { label: '+/-', type: 'operation', html: '<img src="/images/sign.png" alt="">'},    //Cambia de signo
+    { label: 'MRC', type: 'memory' },    //Borra la memoria
+    { label: 'M-', type: 'memory' },
+    { label: 'M+', type: 'memory' },
+    { label: '·/·', type: 'operation', html: '<img src="/images/divide.png" alt="">' },
     { label: '%', type: 'operation' },
     { label: '7', type: 'number' },
     { label: '8', type: 'number' },
     { label: '9', type: 'number' },
-    { label: 'x', type: 'operation' },
-    { label: '√', type: 'operation' },
+    { label: 'x', type: 'operation', html: '<img src="/images/product.png" alt="">' },
+    { label: '√', type: 'operation', html: '<img src="/images/sqrt.png" alt="">' },
     { label: '4', type: 'number' },
     { label: '5', type: 'number' },
     { label: '6', type: 'number' },
-    { label: '-', type: 'operation' },
+    { label: '-', type: 'operation', html: '<img src="/images/substract.png" alt="">' },
     { label: 'C', type: 'operation' },      //Borra la pantalla actual
     { label: '1', type: 'number' },
     { label: '2', type: 'number' },
@@ -31,11 +31,15 @@ const screen = document.getElementById('screen')
 const drawCalculator = (buttons) => {
     buttons.map(button => {
         let calculatorButton = document.createElement('button')
-        calculatorButton.innerText = button.label
         calculatorButton.dataset.label = button.label
         calculatorButton.dataset.type = button.type
         if (button.label === '+'){
             calculatorButton.className = 'plus'
+        }
+        if (button.html){
+            calculatorButton.innerHTML = button.html
+        } else {
+            calculatorButton.innerText = button.label
         }
         calculator.appendChild(calculatorButton)
     })

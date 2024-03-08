@@ -1,13 +1,32 @@
-.body {
+@font-face {
+  font-family: "calculator-font";
+  src: url(fonts/digital-7.regular.ttf);
+}
+
+.calculator_body {
+  background-color: #d2dee5;
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: fit-content;
+  margin: auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px ridge #b8cdd6;
 }
 
 #screen {
-  font-family: monospace;
+  font-family: "calculator-font", monospace;
+  font-size: 24px;
   text-align: right;
   grid-column: span 5;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+img {
+  height: 8px;
 }
 
 .plus {
@@ -16,5 +35,28 @@
 
 #calculator {
   display: grid;
-  grid-template-columns: repeat(5, 50px);
+  grid-template-columns: repeat(5, 1fr);
+}
+
+button {
+  padding: 5px 0px;
+  margin: 2px;
+  border-radius: 8px;
+  font-family: "Nunito";
+}
+
+button {
+  background-color: #ececed;
+  border: 2px outset #bbbcbf;
+}
+
+button[data-type="number"] {
+  background-color: #496e80;
+  color: white;
+  border: 2px outset #3c5968;
+}
+
+button[data-type="result"] {
+  background-color: #fccfd5;
+  border: 2px outset #fbb7c1;
 }
