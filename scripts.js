@@ -27,6 +27,7 @@ const buttons = [
 
 const calculator = document.getElementById('calculator')
 const screen = document.getElementById('screen')
+const memoryScreen = document.getElementById('memory-screen')
 
 const drawCalculator = (buttons) => {
     buttons.map(button => {
@@ -48,7 +49,10 @@ const drawCalculator = (buttons) => {
 
 let lastNumber = ''
 let operation = ''
+let memory = 0
 let needsCleaning = true
+let MRCClicked = false
+
 
 const writeScreen = (key) => {
     if (needsCleaning) {
@@ -92,6 +96,30 @@ const calculate = (key) => {
     
 }
 
+const memorize = (key) => {
+    needsCleaning = true
+    switch (key) {
+        case 'M+':
+            memory = add(Number(memory),Number(screen.value))
+            break;
+        case 'M-':
+            memory = subtract(Number(memory),Number(screen.value))
+
+            break;
+        default:
+            if (MRCClicked) {
+                memory = 0
+                screen.value = '0'
+                needsCleaning = true
+                MRCClicked = false
+            } else {
+                screen.value = memory
+                MRCClicked = true
+            }
+    }
+    memoryScreen.value = memory
+}
+
 const calculateResult = () => {
     needsCleaning = true
     switch (operation) {
@@ -126,6 +154,9 @@ addEventListener('click', e => {
                 break;
             case 'operation':
                 calculate(key)
+                break;
+            case 'memory':
+                memorize(key)
                 break;
             case 'result':
                 calculateResult()
