@@ -19,7 +19,7 @@ const multiply = function(a, b) {
 const divide = function(a, b) {
   if ((typeof a !== "number") || (typeof b !== "number")) return 'ERROR'
 
-  return parseFloat(a)/parseFloat(b)
+  return Number((parseFloat(a)/parseFloat(b)).toFixed(8))
 };
 
 const sqrt = function(a) {

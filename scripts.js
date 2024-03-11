@@ -1,15 +1,15 @@
 const buttons = [
-    { label: '+/-', type: 'operation', html: '<img src="/images/sign.png" alt="">'},    //Cambia de signo
+    { label: 'sign', type: 'operation', html: '<img src="/images/sign.png" alt="">'},    //Cambia de signo
     { label: 'MRC', type: 'memory' },    //Borra la memoria
     { label: 'M-', type: 'memory' },
     { label: 'M+', type: 'memory' },
-    { label: '·/·', type: 'operation', html: '<img src="/images/divide.png" alt="">' },
+    { label: '/', type: 'operation', html: '<img src="/images/divide.png" alt="">' },
     { label: '%', type: 'operation' },
     { label: '7', type: 'number' },
     { label: '8', type: 'number' },
     { label: '9', type: 'number' },
     { label: 'x', type: 'operation', html: '<img src="/images/product.png" alt="">' },
-    { label: '√', type: 'operation', html: '<img src="/images/sqrt.png" alt="">' },
+    { label: 'sqrt', type: 'operation', html: '<img src="/images/sqrt.png" alt="">' },
     { label: '4', type: 'number' },
     { label: '5', type: 'number' },
     { label: '6', type: 'number' },
@@ -67,19 +67,19 @@ const calculate = (key) => {
         case '+':
         case '-':
         case 'x':
-        case '·/·':
+        case '/':
             operation = key
             lastNumber = screen.value
             needsCleaning = true
             break;
-        case '+/-':
+        case 'sign':
             screen.value = screen.value.startsWith('-') ? screen.value.substring(1) : ('-' + screen.value)
             break;
         case '%':
             screen.value = divide(Number(screen.value), 100)
             needsCleaning = true
             break;
-        case '√':
+        case 'sqrt':
             screen.value = sqrt(Number(screen.value))
             needsCleaning = true
             break;
@@ -132,7 +132,7 @@ const calculateResult = () => {
         case 'x':
             screen.value = multiply(Number(lastNumber),Number(screen.value))
             break;
-        case '·/·':
+        case '/':
             screen.value = divide(Number(lastNumber),Number(screen.value))
             break;
         default:
@@ -144,7 +144,7 @@ const calculateResult = () => {
 
 drawCalculator(buttons)
 
-addEventListener('click', e => {
+calculator.addEventListener('click', e => {
     key = e.target.dataset.label
     type = e.target.dataset.type
     if (key) {
