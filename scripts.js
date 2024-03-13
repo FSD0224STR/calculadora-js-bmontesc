@@ -55,11 +55,17 @@ let MRCClicked = false
 
 
 const writeScreen = (key) => {
+    console.log(screen.value.includes('.'))
+    console.log(key)
     if (needsCleaning) {
         screen.value = ''
         needsCleaning = false
     }
-    screen.value = screen.value+key
+    if (screen.value.includes('.') && key === '.'){
+        screen.value = screen.value
+    } else {
+        screen.value = screen.value+key
+    }
 }
 
 const calculate = (key) => {
