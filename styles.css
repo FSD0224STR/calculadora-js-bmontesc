@@ -26,6 +26,7 @@ h1 {
   padding: 40px 20px;
   border-radius: 20px;
   border: 2px ridge #b8cdd6;
+  box-shadow: 5px 5px 5px 0px #3c5968;
 }
 
 #screen,

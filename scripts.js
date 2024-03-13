@@ -1,19 +1,19 @@
 const buttons = [
-    { label: 'sign', type: 'operation', html: '<img src="/images/sign.png" alt="">'},    //Cambia de signo
+    { label: 'sign', type: 'operation', html: '<img src="images/sign.png" alt="">'},    //Cambia de signo
     { label: 'MRC', type: 'memory' },    //Borra la memoria
     { label: 'M-', type: 'memory' },
     { label: 'M+', type: 'memory' },
-    { label: '/', type: 'operation', html: '<img src="/images/divide.png" alt="">' },
+    { label: '/', type: 'operation', html: '<img src="images/divide.png" alt="">' },
     { label: '%', type: 'operation' },
     { label: '7', type: 'number' },
     { label: '8', type: 'number' },
     { label: '9', type: 'number' },
-    { label: 'x', type: 'operation', html: '<img src="/images/product.png" alt="">' },
-    { label: 'sqrt', type: 'operation', html: '<img src="/images/sqrt.png" alt="">' },
+    { label: 'x', type: 'operation', html: '<img src="images/product.png" alt="">' },
+    { label: 'sqrt', type: 'operation', html: '<img src="images/sqrt.png" alt="">' },
     { label: '4', type: 'number' },
     { label: '5', type: 'number' },
     { label: '6', type: 'number' },
-    { label: '-', type: 'operation', html: '<img src="/images/substract.png" alt="">' },
+    { label: '-', type: 'operation', html: '<img src="images/substract.png" alt="">' },
     { label: 'C', type: 'operation' },      //Borra la pantalla actual
     { label: '1', type: 'number' },
     { label: '2', type: 'number' },

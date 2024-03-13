@@ -25,7 +25,7 @@ const divide = function(a, b) {
 const sqrt = function(a) {
   if (typeof a !== "number") return 'ERROR'
 
-  return Math.sqrt(a)
+  return Number((Math.sqrt(a)).toFixed(8))
 };
 
 const power = function(a, b) {
