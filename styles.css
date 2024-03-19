@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  background-color: #ececed;
+  font-family: "Nunito";
+}
+
+@font-face {
+  font-family: "calculator-font";
+  src: url(fonts/digital-7.regular.ttf);
+}
+
+h1 {
+  display: block;
+  background-color: #bbbcbf52;
+  margin-top: 0;
+  padding: 5px 20px;
+}
+
+.calculator_body {
+  background-color: #d2dee5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: fit-content;
+  margin: 50px auto;
+  padding: 40px 20px;
+  border-radius: 20px;
+  border: 2px ridge #b8cdd6;
+  box-shadow: 5px 5px 5px 0px #3c5968;
+}
+
+#screen,
+#memory-screen {
+  font-family: "calculator-font", monospace;
+  grid-column: span 5;
+}
+
+#screen {
+  font-size: 64px;
+  text-align: right;
+  margin: 0px 4px;
+  margin-bottom: 20px;
+  padding: 5px;
+  padding-top: 40px;
+  background-color: #ececed;
+  border: 2px solid #bbbcbf;
+  border-radius: 10px;
+}
+
+#memory-screen {
+  font-size: 24px;
+  background: none;
+  text-align: right;
+  margin: 0px 4px;
+  margin-bottom: -30px;
+  padding-right: 8px;
+  border: none;
+  border-bottom: 1px solid #bbbcbf;
+  z-index: 1;
+}
+
+img {
+  height: 16px;
+}
+
+.plus {
+  grid-row: span 2;
+}
+
+#calculator {
+  display: grid;
+  grid-template-columns: repeat(5, 80px);
+}
+
+button {
+  font-size: 24px;
+  padding: 10px 0px;
+  margin: 5px;
+  border-radius: 20px;
+  font-family: "Nunito";
+}
+
+button {
+  background-color: hsl(240, 3%, 93%);
+  border: 2px outset #bbbcbf;
+}
+
+button[data-type="number"] {
+  background-color: #496e80;
+  color: white;
+  border: 2px outset #3c5968;
+}
+
+button[data-type="result"] {
+  background-color: #fccfd5;
+  border: 2px outset #fbb7c1;
+}
+
+footer {
+  margin: 100px auto;
+  max-width: 300px;
+  text-align: center;
+}
